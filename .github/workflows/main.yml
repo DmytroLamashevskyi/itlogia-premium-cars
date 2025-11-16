@@ -1,43 +1,40 @@
-name: Manual Deploy to GitHub Pages
+name: Build and Deploy to GitHub Pages
 
 on:
-  workflow_dispatch:         # 👈 запуск ТОЛЬКО по кнопке
-    inputs:
-      branch:
-        description: 'Branch to deploy'
-        required: true
-        default: 'main'
+  # запуск по кнопке в Actions
+  workflow_dispatch:
+  # плюс авто-деплой при пуше в main (если не нужно — этот блок можно удалить)
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write        # нужно, чтобы пушить в gh-pages
 
     steps:
-      - name: Checkout selected branch
+      - name: Checkout
         uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.inputs.branch }}   # по умолчанию main
-          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
+          node-version: 20
+          cache: npm
 
       - name: Install dependencies
         run: npm ci
 
       - name: Build Angular project
-        run: npm run build -- --configuration=production --base-href=/itlogia-premium-cars/
-        # outputPath из angular.json: dist/demo
+        run: npm run build -- --configuration production
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist/demo       # 👈 как в angular.json
-          publish_branch: gh-pages       # 👈 ветка с билдами
-          force_orphan: true             # чистая ветка со статикой
+          publish_dir: ./dist/demo/browser   # 👈 ключевой момент
+          publish_branch: gh-pages
+          force_orphan: true
