@@ -1,12 +1,12 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, inject } from '@angular/core';
-import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
+import { HttpClient } from "@angular/common/http";
+import { Component, inject } from "@angular/core";
+import { FormGroup, FormControl, ReactiveFormsModule } from "@angular/forms";
 
 @Component({
-  selector: 'app-cars',
+  selector: "app-cars",
   imports: [ReactiveFormsModule],
-  templateUrl: './cars.html',
-  styleUrl: './cars.css',
+  templateUrl: "./cars.html",
+  styleUrl: "./cars.css",
 })
 export class Cars {
   http = inject(HttpClient);
@@ -16,169 +16,168 @@ export class Cars {
 
   carsData = [
     {
-      brand: 'BMW',
-      name: 'BMW M4 Competition',
-      image: 'https://testologia.ru/cars-images/1.png',
+      brand: "BMW",
+      name: "BMW M4 Competition",
+      image: "https://testologia.ru/cars-images/1.png",
       description:
-        'The perfect balance of speed and style. The BMW M4 Competition delivers 510 hp and a drive engineered to conquer highways and city streets.',
+        "The perfect balance of speed and style. The BMW M4 Competition delivers 510 hp and a drive engineered to conquer highways and city streets.",
       prices: [
-        { duration: '1 Day', price: 1450 },
-        { duration: '1-3 Day', price: 1300 },
-        { duration: '3+ Day', price: 1100 },
+        { duration: "1 Day", price: 1450 },
+        { duration: "1-3 Day", price: 1300 },
+        { duration: "3+ Day", price: 1100 },
       ],
     },
     {
-      brand: 'BMW',
-      name: 'BMW M5',
-      image: 'https://testologia.ru/cars-images/2.png',
+      brand: "BMW",
+      name: "BMW M5",
+      image: "https://testologia.ru/cars-images/2.png",
       description:
         "Business class with a racer's soul. BMW M5: 600 hp, intelligent all-wheel drive and comfort for the most demanding drivers.",
       prices: [
-        { duration: '1 Day', price: 1600 },
-        { duration: '1-3 Day', price: 1450 },
-        { duration: '3+ Day', price: 1250 },
+        { duration: "1 Day", price: 1600 },
+        { duration: "1-3 Day", price: 1450 },
+        { duration: "3+ Day", price: 1250 },
       ],
     },
     {
-      brand: 'Lamborghini',
-      name: 'Lamborghini Huracan Spyder Green',
-      image: 'https://testologia.ru/cars-images/3.png',
+      brand: "Lamborghini",
+      name: "Lamborghini Huracan Spyder Green",
+      image: "https://testologia.ru/cars-images/3.png",
       description:
-        'The embodiment of speed and passion. The green Lamborghini Huracan Spyder offers 640 hp and an open top for unforgettable adventures.',
+        "The embodiment of speed and passion. The green Lamborghini Huracan Spyder offers 640 hp and an open top for unforgettable adventures.",
       prices: [
-        { duration: '1 Day', price: 3200 },
-        { duration: '1-3 Day', price: 2900 },
-        { duration: '3+ Day', price: 2600 },
+        { duration: "1 Day", price: 3200 },
+        { duration: "1-3 Day", price: 2900 },
+        { duration: "3+ Day", price: 2600 },
       ],
     },
     {
-      brand: 'Ferrari',
-      name: 'Ferrari F8 Spider',
-      image: 'https://testologia.ru/cars-images/4.png',
+      brand: "Ferrari",
+      name: "Ferrari F8 Spider",
+      image: "https://testologia.ru/cars-images/4.png",
       description:
-        'A dream on wheels. Ferrari F8 Spider: 720 hp, F1-inspired aerodynamics and an open cockpit for those who live at full speed.',
+        "A dream on wheels. Ferrari F8 Spider: 720 hp, F1-inspired aerodynamics and an open cockpit for those who live at full speed.",
       prices: [
-        { duration: '1 Day', price: 3500 },
-        { duration: '1-3 Day', price: 3200 },
-        { duration: '3+ Day', price: 2900 },
+        { duration: "1 Day", price: 3500 },
+        { duration: "1-3 Day", price: 3200 },
+        { duration: "3+ Day", price: 2900 },
       ],
     },
     {
-      brand: 'Porsche',
-      name: 'Porsche 911 Targa 4S Yellow',
-      image: 'https://testologia.ru/cars-images/5.png',
+      brand: "Porsche",
+      name: "Porsche 911 Targa 4S Yellow",
+      image: "https://testologia.ru/cars-images/5.png",
       description:
-        'Elegant power in a bold color. Porsche 911 Targa 4S: all-wheel drive, 450 hp and the iconic Targa style.',
+        "Elegant power in a bold color. Porsche 911 Targa 4S: all-wheel drive, 450 hp and the iconic Targa style.",
       prices: [
-        { duration: '1 Day', price: 1800 },
-        { duration: '1-3 Day', price: 1650 },
-        { duration: '3+ Day', price: 1450 },
+        { duration: "1 Day", price: 1800 },
+        { duration: "1-3 Day", price: 1650 },
+        { duration: "3+ Day", price: 1450 },
       ],
     },
     {
-      brand: 'Mercedes',
-      name: 'Mercedes SL 55 AMG',
-      image: 'https://testologia.ru/cars-images/6.png',
+      brand: "Mercedes",
+      name: "Mercedes SL 55 AMG",
+      image: "https://testologia.ru/cars-images/6.png",
       description:
-        'Classic sports chic. Mercedes SL 55 AMG: luxury, a convertible body and 469 hp for unforgettable drives.',
+        "Classic sports chic. Mercedes SL 55 AMG: luxury, a convertible body and 469 hp for unforgettable drives.",
       prices: [
-        { duration: '1 Day', price: 1700 },
-        { duration: '1-3 Day', price: 1550 },
-        { duration: '3+ Day', price: 1350 },
+        { duration: "1 Day", price: 1700 },
+        { duration: "1-3 Day", price: 1550 },
+        { duration: "3+ Day", price: 1350 },
       ],
     },
     {
-      brand: 'BMW',
-      name: 'BMW Z4',
-      image: 'https://testologia.ru/cars-images/7.png',
+      brand: "BMW",
+      name: "BMW Z4",
+      image: "https://testologia.ru/cars-images/7.png",
       description:
-        'A compact convertible for stylish journeys. BMW Z4: the perfect blend of agility, power and elegant design.',
+        "A compact convertible for stylish journeys. BMW Z4: the perfect blend of agility, power and elegant design.",
       prices: [
-        { duration: '1 Day', price: 1200 },
-        { duration: '1-3 Day', price: 1100 },
-        { duration: '3+ Day', price: 950 },
+        { duration: "1 Day", price: 1200 },
+        { duration: "1-3 Day", price: 1100 },
+        { duration: "3+ Day", price: 950 },
       ],
     },
     {
-      brand: 'Mercedes',
-      name: 'Mercedes C180 Convertible',
-      image: 'https://testologia.ru/cars-images/8.png',
+      brand: "Mercedes",
+      name: "Mercedes C180 Convertible",
+      image: "https://testologia.ru/cars-images/8.png",
       description:
-        'The perfect choice for a sunny day. Mercedes C180 Convertible: a cabriolet made for light and comfortable driving.',
+        "The perfect choice for a sunny day. Mercedes C180 Convertible: a cabriolet made for light and comfortable driving.",
       prices: [
-        { duration: '1 Day', price: 1000 },
-        { duration: '1-3 Day', price: 900 },
-        { duration: '3+ Day', price: 800 },
+        { duration: "1 Day", price: 1000 },
+        { duration: "1-3 Day", price: 900 },
+        { duration: "3+ Day", price: 800 },
       ],
     },
     {
-      brand: 'Chevrolet',
-      name: 'Chevrolet Corvette Orange',
-      image: 'https://testologia.ru/cars-images/9.png',
+      brand: "Chevrolet",
+      name: "Chevrolet Corvette Orange",
+      image: "https://testologia.ru/cars-images/9.png",
       description:
-        'Bright, powerful, unforgettable. The orange Chevrolet Corvette delivers 495 hp and a style that speaks for itself.',
+        "Bright, powerful, unforgettable. The orange Chevrolet Corvette delivers 495 hp and a style that speaks for itself.",
       prices: [
-        { duration: '1 Day', price: 1400 },
-        { duration: '1-3 Day', price: 1250 },
-        { duration: '3+ Day', price: 1100 },
+        { duration: "1 Day", price: 1400 },
+        { duration: "1-3 Day", price: 1250 },
+        { duration: "3+ Day", price: 1100 },
       ],
     },
     {
-      brand: 'Audi',
-      name: 'Audi R8 Blue',
-      image: 'https://testologia.ru/cars-images/10.png',
+      brand: "Audi",
+      name: "Audi R8 Blue",
+      image: "https://testologia.ru/cars-images/10.png",
       description:
-        'A supercar created for those in love with speed. Audi R8 Blue: all-wheel drive, 570 hp and a stunning design.',
+        "A supercar created for those in love with speed. Audi R8 Blue: all-wheel drive, 570 hp and a stunning design.",
       prices: [
-        { duration: '1 Day', price: 2000 },
-        { duration: '1-3 Day', price: 1850 },
-        { duration: '3+ Day', price: 1600 },
+        { duration: "1 Day", price: 2000 },
+        { duration: "1-3 Day", price: 1850 },
+        { duration: "3+ Day", price: 1600 },
       ],
     },
     {
-      brand: 'Chevrolet',
-      name: 'Chevrolet Corvette White',
-      image: 'https://testologia.ru/cars-images/11.png',
+      brand: "Chevrolet",
+      name: "Chevrolet Corvette White",
+      image: "https://testologia.ru/cars-images/11.png",
       description:
-        'Classic power in an exquisite color. Chevrolet Corvette White: power, dynamics and style for true connoisseurs.',
+        "Classic power in an exquisite color. Chevrolet Corvette White: power, dynamics and style for true connoisseurs.",
       prices: [
-        { duration: '1 Day', price: 1350 },
-        { duration: '1-3 Day', price: 1200 },
-        { duration: '3+ Day', price: 1000 },
+        { duration: "1 Day", price: 1350 },
+        { duration: "1-3 Day", price: 1200 },
+        { duration: "3+ Day", price: 1000 },
       ],
     },
     {
-      brand: 'Ford',
-      name: 'Ford Mustang Convertible Black',
-      image: 'https://testologia.ru/cars-images/12.png',
+      brand: "Ford",
+      name: "Ford Mustang Convertible Black",
+      image: "https://testologia.ru/cars-images/12.png",
       description:
-        'A legend in an open format. Ford Mustang Convertible Black: 450 hp, iconic style and freedom under the open sky.',
+        "A legend in an open format. Ford Mustang Convertible Black: 450 hp, iconic style and freedom under the open sky.",
       prices: [
-        { duration: '1 Day', price: 1250 },
-        { duration: '1-3 Day', price: 1150 },
-        { duration: '3+ Day', price: 1000 },
+        { duration: "1 Day", price: 1250 },
+        { duration: "1-3 Day", price: 1150 },
+        { duration: "3+ Day", price: 1000 },
       ],
     },
   ];
 
   orderForm = new FormGroup({
-    carName: new FormControl(''),
-    customerName: new FormControl(''),
-    customerPhone: new FormControl(''),
+    carName: new FormControl(""),
+    customerName: new FormControl(""),
+    customerPhone: new FormControl(""),
   });
 
   ngOnInit() {
     this.cars = this.carsData;
     this.setupBrands(this.cars);
 
-    this.getCars([]);
+    this.getCars("");
   }
 
   private mapServerCar(item: any) {
-    // Бренд берём из начала title: "BMW M4 Competition" → "BMW"
-    const brand = item.title.split(' ')[0];
+    const brand = item.title.split(" ")[0];
 
-    const durations = ['1 Day', '1-3 Day', '3+ Day'];
+    const durations = ["1 Day", "1-3 Day", "3+ Day"];
 
     return {
       brand,
@@ -198,7 +197,7 @@ export class Cars {
     );
 
     this.brands = [
-      { name: 'All brands', active: true },
+      { name: "All brands", active: true },
       ...uniqueBrands.map((brand) => ({
         name: brand,
         active: false,
@@ -206,11 +205,11 @@ export class Cars {
     ];
   }
 
-  getCars(filter: string[]) {
+  getCars(filter: string | null) {
     this.http
-      .get<any[]>('https://testologia.ru/cars-data', {
+      .get<any[]>("https://testologia.ru/cars-data", {
         params: {
-          filter: filter, // если API реально использует фильтр — оставляем
+          filter: filter ?? "",
         },
       })
       .subscribe({
@@ -219,12 +218,10 @@ export class Cars {
 
           this.carsData = mapped;
           this.cars = mapped;
-
-          this.setupBrands(this.cars);
         },
         error: (err) => {
           console.error(
-            'Не удалось получить данные с сервера, используем локальные',
+            "Не удалось получить данные с сервера, используем локальные",
             err
           );
 
@@ -241,15 +238,13 @@ export class Cars {
     this.brands.forEach((e) => (e.active = false));
     filter.active = true;
 
-    if (filter.name === 'All brands') {
-      this.cars = this.carsData;
+    if (filter.name === "All brands") {
+      this.cars = this.getCars("");
     } else {
-      this.cars = this.carsData.filter((item) =>
-        item.brand.includes(filter.name)
-      );
+      this.cars = this.getCars(filter.name);
     }
 
-    carsContent.scrollIntoView({ behavior: 'instant' });
+    carsContent.scrollIntoView({ behavior: "instant" });
   }
 
   isError(fieldName: string) {
@@ -260,7 +255,7 @@ export class Cars {
   sendOrder() {
     if (this.orderForm.valid) {
       this.http
-        .post('https://testologia.ru/cars-order', {
+        .post("https://testologia.ru/cars-order", {
           car: this.orderForm.value.carName,
           name: this.orderForm.value.customerName,
           phone: this.orderForm.value.customerPhone,
