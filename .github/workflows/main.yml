@@ -2,14 +2,18 @@ name: Build and Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches:
+      - publish   # 👉 триггерим workflow только на ветке publish
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write   # нужно, чтобы action мог пушить в ветку с GitHub Pages
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -21,11 +25,12 @@ jobs:
         run: npm ci
 
       - name: Build Angular project
-        run: npm run build
+        run: npm run build -- --configuration=production
+        # при необходимости поменяй конфиг / команду билда
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist/demo
-    publish_branch: publish
+          publish_dir: ./dist/demo      # 👉 путь к собранному Angular-проекту
+          publish_branch: gh-pages      # 👉 сюда будет выкладываться статика
