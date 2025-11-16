@@ -39,7 +39,7 @@
             "scripts": [],
             "styles": ["src/global_styles.css"],
             "tsConfig": "tsconfig.app.json",
-            "baseHref": "/itlogia-premium-cars"
+            "baseHref": "/itlogia-premium-cars/"
           }
         },
         "serve": {
