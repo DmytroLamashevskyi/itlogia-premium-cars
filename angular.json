@@ -38,7 +38,8 @@
             "polyfills": ["zone.js"],
             "scripts": [],
             "styles": ["src/global_styles.css"],
-            "tsConfig": "tsconfig.app.json"
+            "tsConfig": "tsconfig.app.json",
+            "baseHref": "/itlogia-premium-cars"
           }
         },
         "serve": {
